@@ -7,3 +7,10 @@ int main()
  
     return 0;
 }
+
+
+#ifdef UNICODE
+#define CreateWindowEx  CreateWindowExW
+#else
+#define CreateWindowEx  CreateWindowExA
+#endif
