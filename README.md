@@ -62,9 +62,12 @@ int Message::createMessageId() {
 #include "Message.h"
 using namespace std;
 int main() {
-    string msgContent{ "明天下午3点钟有个会" };
+    string msgContent{ "有个会" };
     Message* msg{ new Message(12,34,msgContent) };
     msg->SendMessage();
     delete msg;
     auto c = getchar();
 }
+thread t(func,i);
+cout << t.get_id() << endl; 
+cout << this_thread::get_id() << endl; 
