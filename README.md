@@ -71,3 +71,6 @@ int main() {
 thread t(func,i);
 cout << t.get_id() << endl; 
 cout << this_thread::get_id() << endl; 
+int add(double a,double b) {
+    return a + b;
+}
