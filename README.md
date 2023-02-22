@@ -74,3 +74,5 @@ cout << this_thread::get_id() << endl;
 int add(double a,double b) {
     return a + b;
 }
+
+类型：string
