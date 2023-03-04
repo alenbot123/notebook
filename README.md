@@ -76,3 +76,4 @@ int add(double a,double b) {
 }
 
 类型：string
+头文件的定义是什么？
