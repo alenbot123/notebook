@@ -77,3 +77,4 @@ int add(double a,double b) {
 
 类型：string
 头文件的定义是什么？
+小说与诗歌、散文、戏剧，并称“四大文学体裁”。
