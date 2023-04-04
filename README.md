@@ -79,3 +79,37 @@ int add(double a,double b) {
 头文件的定义是什么？
 小说与诗歌、散文、戏剧，并称“四大文学体裁”。
 #include <string>
+
+c语言排序：
+#include <stdio.h>
+
+void insertionSort(int arr[], int n) {
+    int i, key, j;
+    for (i = 1; i < n; i++) {
+        key = arr[i];
+        j = i - 1;
+
+        /* 将 arr[0...i-1] 中大于 key 的元素向右移动一位 */
+        while (j >= 0 && arr[j] > key) {
+            arr[j+1] = arr[j];
+            j = j - 1;
+        }
+        arr[j+1] = key;
+    }
+}
+
+int main() {
+    int arr[] = {12, 11, 13, 5, 6};
+    int n = sizeof(arr) / sizeof(arr[0]);
+
+    insertionSort(arr, n);
+
+    printf("排序后的数组：\n");
+    for (int i = 0; i < n; i++) {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+
+    return 0;
+}
+
