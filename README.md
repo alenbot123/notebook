@@ -137,3 +137,36 @@ int main() {
     }
     return 0;
 }
+快速排序
+#include <stdio.h>
+
+// 快速排序函数
+void quick_sort(int arr[], int left, int right) {
+    if (left >= right) return;
+    int pivot = arr[left];  // 选取基准数
+    int i = left, j = right;
+    while (i < j) {
+        // 从右往左找到第一个小于等于基准数的数
+        while (i < j && arr[j] > pivot) j--;
+        if (i < j) arr[i++] = arr[j];
+        // 从左往右找到第一个大于基准数的数
+        while (i < j && arr[i] < pivot) i++;
+        if (i < j) arr[j--] = arr[i];
+    }
+    arr[i] = pivot;  // 将基准数放到正确的位置上
+    quick_sort(arr, left, i - 1);  // 递归处理左边的子数组
+    quick_sort(arr, i + 1, right);  // 递归处理右边的子数组
+}
+
+// 测试代码
+int main() {
+    int arr[] = {3, 9, 4, 1, 7, 2, 8, 5, 6};
+    int n = sizeof(arr) / sizeof(arr[0]);
+    quick_sort(arr, 0, n - 1);
+    for (int i = 0; i < n; i++) {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+    return 0;
+}
+
