@@ -169,4 +169,33 @@ int main() {
     printf("\n");
     return 0;
 }
+重排
+#include <iostream>
+#include <algorithm>
+#include <ctime>
+#include <cstdlib>
+using namespace std;
+
+int main() {
+    int arr[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+    int n = sizeof(arr) / sizeof(arr[0]);
+    
+    // 设置随机种子
+    srand(time(0));
+    
+    cout << "原始数组：";
+    for (int i = 0; i < n; i++) {
+        cout << arr[i] << " ";
+    }
+    
+    // 随机重排数组
+    random_shuffle(arr, arr + n);
+    
+    cout << "\n重排后的数组：";
+    for (int i = 0; i < n; i++) {
+        cout << arr[i] << " ";
+    }
+    
+    return 0;
+}
 
