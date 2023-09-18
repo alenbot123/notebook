@@ -199,3 +199,54 @@ int main() {
     return 0;
 }
 
+java快速排序
+public class QuickSort {
+    public static void main(String[] args) {
+        int[] arr = { 5, 2, 9, 6, 3, 1, 8, 7, 4 };
+
+        System.out.println("原始数组:");
+        printArray(arr);
+
+        quickSortAlgorithm(arr, 0, arr.length - 1);
+
+        System.out.println("\n排序后的数组:");
+        printArray(arr);
+    }
+
+    public static void quickSortAlgorithm(int[] arr, int low, int high) {
+        if (low < high) {
+            int pivotIndex = partition(arr, low, high);
+
+            quickSortAlgorithm(arr, low, pivotIndex - 1);
+            quickSortAlgorithm(arr, pivotIndex + 1, high);
+        }
+    }
+
+    public static int partition(int[] arr, int low, int high) {
+        int pivot = arr[high];
+        int i = low - 1;
+
+        for (int j = low; j < high; j++) {
+            if (arr[j] < pivot) {
+                i++;
+                swap(arr, i, j);
+            }
+        }
+
+        swap(arr, i + 1, high);
+
+        return i + 1;
+    }
+
+    public static void swap(int[] arr, int i, int j) {
+        int temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+    }
+
+    public static void printArray(int[] arr) {
+        for (int num : arr) {
+            System.out.print(num + " ");
+        }
+    }
+}
